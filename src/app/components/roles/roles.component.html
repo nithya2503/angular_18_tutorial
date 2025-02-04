@@ -1,2 +1,42 @@
 <p>roles works!</p>
+<!--interpolation-->
 <p>{{firstName}} </p>
+<p>{{selectedState}}</p>
+
+
+<!--property binding-->
+<div class = "row">
+  <div class="col-3">
+    <input type="text" [value]="firstName" class = "form-control"/>
+  </div>
+  <div class ="col-3">
+    <input [type]="inputType" />
+  </div>
+
+  <!--2-way databinding using ngmodule-->
+
+  <div class ="col-3">
+    <input type="text" [(ngModel)]="firstName"/>
+  </div>
+
+  <div class="col-3">
+    <select [(ngModel)]="selectedState">
+      <option value="MH">MH</option>
+      <option value="MP">MP</option>
+      <option value="GOA">GOA</option>
+
+    </select>
+  </div>
+</div>
+<div class = "row">
+  <div class=" col-3">
+    <button class="btn btn-success"(click)="showWelcomeAlert()">Message</button>
+  </div>
+  <div class=" col-3">
+    <button class="btn btn-failure"(click)="showMessage('function with argument')">Message</button>
+  </div>
+
+</div>
+
+
+
